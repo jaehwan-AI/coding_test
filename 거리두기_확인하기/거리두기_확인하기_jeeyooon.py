@@ -6,14 +6,13 @@ def bfs(case):
             if case[i][j] == 'P':
                 for k in range(len(x)):
                     n_x, n_y = i + x[k], j + y[k]
-                    if 0 <= n_x < 5 and 0 <= n_y < 5:
-                        if case[n_x][n_y] == 'P':
-                            if k // 4 == 0:
-                                return 0
-                            elif k//4 == 1 and [case[n_x][j], case[i][n_y]] != ['X','X']:
-                                return 0
-                            elif k//4 ==2 and case[i+(x[k]//2)][j+(y[k]//2)] != 'X':
-                                return 0
+                    if 0 <= n_x < 5 and 0 <= n_y < 5 and case[n_x][n_y] == 'P'::
+                        if k // 4 == 0:
+                            return 0
+                        elif k//4 == 1 and [case[n_x][j], case[i][n_y]] != ['X','X']:
+                            return 0
+                        elif k//4 ==2 and case[i+(x[k]//2)][j+(y[k]//2)] != 'X':
+                            return 0
     return 1
     
 def solution(places):
