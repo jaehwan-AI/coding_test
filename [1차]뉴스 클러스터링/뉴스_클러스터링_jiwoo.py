@@ -34,19 +34,14 @@ def solution(str1, str2):
     set2 = set(words2)
 
     inter = set1.intersection(set2)
-    union = set1.union(set2)
 
-    all_union = 0
     all_inter = 0
     for inter_item in inter:
         if dic1[inter_item] > 1 or dic2[inter_item] > 1:
             inter_val = min(dic1[inter_item], dic2[inter_item])
-            union_val = max(dic1[inter_item], dic2[inter_item])
-            all_union += union_val
             all_inter += inter_val
 
         else:  # str1, str2에서 개수가 1인 경우
-            all_union += 1
             all_inter += 1
 
     all_union = sum(dic1.values()) + sum(dic2.values()) - all_inter
