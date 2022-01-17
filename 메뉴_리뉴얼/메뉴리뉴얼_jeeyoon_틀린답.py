@@ -1,3 +1,5 @@
+# 문제를 잘못 읽어서 잘못 푼 케이스 (각 코스마다 추천한다는 생각을 못해서 계속 헤맴)
+
 # -*- coding: utf-8 -*-
 from itertools import permutations
 from collections import defaultdict
@@ -17,7 +19,6 @@ def solution(orders, course):
     for i in can:
         dict[i] += 1
     dict = sorted(dict.items(), key=lambda x : [x[1], len(x[0])], reverse=True) # 개수와 길이 순으로 sort
-    print(dict)
     check = dict[0][1] + 1
     idx = 0
     string = ''
@@ -33,7 +34,6 @@ def solution(orders, course):
             if len(string) == len(dict[idx][0]):
                 answer.append(dict[idx][0])
         idx += 1
-    print(sorted(answer))
     return sorted(answer)
 
 solution(["ABCDE", "AB", "CD", "ADE", "XYZ", "XYZ", "ACD"], [2,3,5])
